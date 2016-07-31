@@ -1,3 +1,4 @@
+{% include base.html %}
 <!DOCTYPE html>
 <html class="no-js" lang="">
 
@@ -19,9 +20,9 @@
     
     	{% include footer.html %}
 
-        <script defer src="js/vendor/svgxuse.js"></script>
-        <script src="js/vendor/bliss.js"></script>
-        <script src="js/main.js"></script>
+        <script defer src="{{ base }}/js/vendor/svgxuse.js"></script>
+        <script src="{{ base }}/js/vendor/bliss.js"></script>
+        <script src="{{ base }}/js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
