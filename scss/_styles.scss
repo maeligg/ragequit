@@ -1,0 +1,383 @@
+$dark-grey : #2B303B;
+$background-light: #DFD4D0;
+$breakpoint-sm: 650px;
+$breakpoint-md: 880px;
+
+// @font-face {
+// 	font-family:"StarWars";
+// 	src:url("../fonts/StarWars.eot?") format("eot"),
+// 	url("../fonts/StarWars.woff") format("woff"),
+// 	url("../fonts/StarWars.ttf") format("truetype"),
+// 	url("../fonts/StarWars.svg#STARWARS") format("svg");
+// 	font-weight:normal;
+// 	font-style:normal;
+// }
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin: 0 0 70px; // Footer height
+	background-color: $background-light;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+header, footer {
+	background-color: $dark-grey;
+}
+
+header {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	.logo-wrapper {
+		text-decoration: none;
+		
+		@media (max-width: $breakpoint-sm) {
+			width: calc(100% - 70px); // Leave room for the burger menu
+		}
+
+		.logo {
+			height: 70px;
+		}
+	}
+
+	.tagline {
+		padding: 0 10px;
+		line-height: 70px;
+		color: $background-light;
+		font-size: 1.2rem;
+		font-style: italic;
+
+		@media (max-width: $breakpoint-md) {
+			display: none;
+		}
+	}
+
+	.menu-toggle {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		cursor: pointer;
+
+		@media screen and (min-width: $breakpoint-sm) {
+			display: none;
+		}
+		
+		.icon {
+			height: 30px;
+			width: 30px;
+			fill: #fff;
+		}
+	}
+	
+	nav {
+		height: 100%;
+		background-color: $dark-grey;
+		
+		&.open {
+			display: block;
+		}
+
+		@media (max-width: $breakpoint-sm) {
+			width: 100%;
+		}
+		
+		@media (max-width: $breakpoint-md) {
+			display: none;
+		}
+
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			list-style: none;
+			margin: 0;
+			height: 100%;
+
+			@media screen and (min-width: $breakpoint-sm) {
+				display: flex;
+			}
+
+			a {
+				display: inline-block;
+				height: 100%;
+				padding: 25px 15px;
+				color: #fff;
+				text-decoration: none;
+
+				&:hover {
+					background-color: lighten($dark-grey, 10%);
+				}
+
+				.icon.icon {
+					height: 25px;
+					width: 25px;
+					fill: #fff;
+				}
+			}
+		}
+		
+	}
+}
+
+.page-wrap {
+	min-height: 100%;
+	margin-bottom: -70px; // Footer height
+
+	&:after {
+		content: "";
+		display: block;
+		height: 70px;
+	}
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	height: 70px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+	font-size: 0.8rem;
+	
+	div {
+		padding: 0 20px;
+	}
+
+	a {
+		color: #fff;
+	}
+
+	.outpost-logo {
+		height: 50px;
+	}
+}
+
+
+/***
+* Homepage
+***/
+
+.homepage {
+	
+	.main-wrapper {
+		position: relative;
+	}
+	
+	.container {
+		position: absolute;
+		z-index: 10;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 75vw;
+		padding-right: 30%;
+		padding-left: 40px;
+		overflow: hidden;
+		background: linear-gradient(to right, $background-light 65%, transparent);
+		text-align: center;
+
+		@media screen and (max-width: $breakpoint-md) {
+			position: static;
+			width: 100%;
+			padding: 0 40px;
+			background: $background-light;
+		}
+
+		.icon {
+			width: 40px;
+			height: 40px;
+			margin: 0 5px;
+			transition: all .2s ease-in-out;
+
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+	}
+
+	.video-container {
+		position: relative;
+		padding-bottom: 50%;
+		height: 0;
+		
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	section:first-of-type {
+		clear: both;
+	}
+
+	section {
+		position: relative;
+		height: calc((100vh - 140px) / 3);
+		min-height: 250px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		overflow: hidden;
+
+		@media screen and (max-width: $breakpoint-sm) {
+			padding: 0;
+			background-size: cover;
+		}
+		
+		a {
+			position: relative;
+			z-index: 10;
+		}
+
+		.section-title {
+			width: 300px;
+			transition: all .2s ease-in-out;
+
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+
+		.view-more {
+			position: absolute;
+			top: 50%;
+			right: 100px;
+			transform: translateY(-50%);
+			text-decoration: none;
+			border-radius: 50%;
+			transition: all .5s ease-in-out;
+
+			@media screen and (max-width: $breakpoint-md) {
+				right: auto;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		.view-more-wrapper {
+			margin-top: 5px;
+			text-align: center;
+		}
+
+		.view-more-btn {
+			display: inline-block;
+			padding: 5px 10px;
+			color: $dark-grey;
+				background: #fff;
+				border: 2px solid transparent;
+			border-radius: 5px;
+			text-decoration: none;
+
+			&:hover {
+				color: $dark-grey;
+				background: #fff;
+				border: 2px solid transparent;
+			}
+		}
+	}
+
+	#x-wing {
+		background-image: url("../img/SW.jpg");
+	}
+
+	#mtg {
+		background-image: url("../img/mtg.jpg");
+	}
+
+	#hearthstone {
+		background-image: url("../img/hearthstone.jpg");
+	}
+}
+
+
+/***
+* Game page
+***/
+
+.game-page {
+	
+	.main-wrapper {
+		background-color: $background-light;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 20px;
+		text-align: center;
+		background-color: $background-light;
+
+		.page-title {
+			img {
+				height: 100px;
+			}
+		}
+	}
+	
+	p {
+		text-align: left;
+	}
+
+	.about, .latest-video {
+		@media screen and (min-width: $breakpoint-md) {
+			width: 50%;
+		}
+	}
+
+	.about {
+		float: left;
+	}
+
+	.latest-video {
+		@media screen and (min-width: $breakpoint-md) {
+			float: right;
+		}
+
+		.icon {
+			width: 30px;
+			height: 30px;
+		}
+	}
+	
+	.streamers {
+		padding-top: 40px;
+		clear: both;
+
+		.bios {
+			display: flex;
+			justify-content: space-around;
+
+			.streamer {
+				@media screen and (min-width: $breakpoint-sm) {
+					width: 50%;
+				}
+
+				h3 {
+					text-align: left;
+				}
+			}
+
+			.streamer-picture {
+				float: left;
+				padding: 10px;
+				border-radius: 50%;
+				width: 200px;
+			}
+
+			.streamer-bio {
+				float: left;
+			}
+		}
+	}
+}

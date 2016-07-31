@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+    {% include head.html %}
+    
+    <body class="homepage">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- <div class="page-wrap"> -->
+
+            {% include header.html %}
+
+            <div class="main-wrapper">
+                <div class="container">
+                    {{ content }}
+                </div>
+                
+                <section id="x-wing">
+                    <div class="view-more">
+                        <a href="x-wing.html"><img src="img/x-wing_logo.png" alt="" class="section-title"></a>
+                        <div class="view-more-wrapper">
+                        </div>
+                    </div>          
+                </section>
+                
+               <section id="mtg">
+                    <div class="view-more">
+                        <a href="mtg.html"><img src="img/mtg_logo.png" alt="" class="section-title"></a>
+                        <div class="view-more-wrapper">
+                        </div>
+                    </div>           
+                </section>
+
+                <section id="hearthstone">
+                    <div class="view-more">
+                        <a href="hearthstone.html"><img src="img/hearthstone_logo.png" alt="" class="section-title"></a>
+                        <div class="view-more-wrapper">
+                        </div>
+                    </div>             
+                </section>
+            </div>
+        
+        {% include footer.html %}
+
+        <script defer src="js/vendor/svgxuse.js"></script>
+        <script src="js/vendor/bliss.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>

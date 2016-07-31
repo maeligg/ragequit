@@ -1,0 +1,461 @@
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical; }
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers
+ */
+.hidden {
+  display: none !important; }
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden; }
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.clearfix:after {
+  clear: both; }
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  *,
+  *:before,
+  *:after,
+  *:first-letter,
+  *:first-line {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a,
+  a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group; }
+  tr,
+  img {
+    page-break-inside: avoid; }
+  img {
+    max-width: 100% !important; }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  margin: 0 0 70px;
+  background-color: #DFD4D0;
+  font-family: 'Source Sans Pro', sans-serif; }
+
+header, footer {
+  background-color: #2B303B; }
+
+header {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  flex-wrap: wrap; }
+  header .logo-wrapper {
+    text-decoration: none; }
+    @media (max-width: 650px) {
+      header .logo-wrapper {
+        width: calc(100% - 70px); } }
+    header .logo-wrapper .logo {
+      height: 70px; }
+  header .tagline {
+    padding: 0 10px;
+    line-height: 70px;
+    color: #DFD4D0;
+    font-size: 1.2rem;
+    font-style: italic; }
+    @media (max-width: 880px) {
+      header .tagline {
+        display: none; } }
+  header .menu-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer; }
+    @media screen and (min-width: 650px) {
+      header .menu-toggle {
+        display: none; } }
+    header .menu-toggle .icon {
+      height: 30px;
+      width: 30px;
+      fill: #fff; }
+  header nav {
+    height: 100%;
+    background-color: #2B303B; }
+    header nav.open {
+      display: block; }
+    @media (max-width: 650px) {
+      header nav {
+        width: 100%; } }
+    @media (max-width: 880px) {
+      header nav {
+        display: none; } }
+    header nav ul {
+      display: -webkit-box;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      list-style: none;
+      margin: 0;
+      height: 100%; }
+      @media screen and (min-width: 650px) {
+        header nav ul {
+          display: -webkit-box;
+          display: flex; } }
+      header nav ul a {
+        display: inline-block;
+        height: 100%;
+        padding: 25px 15px;
+        color: #fff;
+        text-decoration: none; }
+        header nav ul a:hover {
+          background-color: #414859; }
+        header nav ul a .icon.icon {
+          height: 25px;
+          width: 25px;
+          fill: #fff; }
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -70px; }
+  .page-wrap:after {
+    content: "";
+    display: block;
+    height: 70px; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  color: #fff;
+  font-size: 0.8rem; }
+  footer div {
+    padding: 0 20px; }
+  footer a {
+    color: #fff; }
+  footer .outpost-logo {
+    height: 50px; }
+
+/***
+* Homepage
+***/
+.homepage .main-wrapper {
+  position: relative; }
+
+.homepage .container {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 75vw;
+  padding-right: 30%;
+  padding-left: 40px;
+  overflow: hidden;
+  background: -webkit-linear-gradient(left, #DFD4D0 65%, transparent);
+  background: linear-gradient(to right, #DFD4D0 65%, transparent);
+  text-align: center; }
+  @media screen and (max-width: 880px) {
+    .homepage .container {
+      position: static;
+      width: 100%;
+      padding: 0 40px;
+      background: #DFD4D0; } }
+  .homepage .container .icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out; }
+    .homepage .container .icon:hover {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2); }
+
+.homepage .video-container {
+  position: relative;
+  padding-bottom: 50%;
+  height: 0; }
+  .homepage .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+.homepage section:first-of-type {
+  clear: both; }
+
+.homepage section {
+  position: relative;
+  height: calc((100vh - 140px) / 3);
+  min-height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  overflow: hidden; }
+  @media screen and (max-width: 650px) {
+    .homepage section {
+      padding: 0;
+      background-size: cover; } }
+  .homepage section a {
+    position: relative;
+    z-index: 10; }
+  .homepage section .section-title {
+    width: 300px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out; }
+    .homepage section .section-title:hover {
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05); }
+  .homepage section .view-more {
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    text-decoration: none;
+    border-radius: 50%;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out; }
+    @media screen and (max-width: 880px) {
+      .homepage section .view-more {
+        right: auto;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%); } }
+  .homepage section .view-more-wrapper {
+    margin-top: 5px;
+    text-align: center; }
+  .homepage section .view-more-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #2B303B;
+    background: #fff;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    text-decoration: none; }
+    .homepage section .view-more-btn:hover {
+      color: #2B303B;
+      background: #fff;
+      border: 2px solid transparent; }
+
+.homepage #x-wing {
+  background-image: url("../img/SW.jpg"); }
+
+.homepage #mtg {
+  background-image: url("../img/mtg.jpg"); }
+
+.homepage #hearthstone {
+  background-image: url("../img/hearthstone.jpg"); }
+
+/***
+* Game page
+***/
+.game-page .main-wrapper {
+  background-color: #DFD4D0; }
+
+.game-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #DFD4D0; }
+  .game-page .container .page-title img {
+    height: 100px; }
+
+.game-page p {
+  text-align: left; }
+
+@media screen and (min-width: 880px) {
+  .game-page .about, .game-page .latest-video {
+    width: 50%; } }
+
+.game-page .about {
+  float: left; }
+
+@media screen and (min-width: 880px) {
+  .game-page .latest-video {
+    float: right; } }
+
+.game-page .latest-video .icon {
+  width: 30px;
+  height: 30px; }
+
+.game-page .streamers {
+  padding-top: 40px;
+  clear: both; }
+  .game-page .streamers .bios {
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around; }
+    @media screen and (min-width: 650px) {
+      .game-page .streamers .bios .streamer {
+        width: 50%; } }
+    .game-page .streamers .bios .streamer h3 {
+      text-align: left; }
+    .game-page .streamers .bios .streamer-picture {
+      float: left;
+      padding: 10px;
+      border-radius: 50%;
+      width: 200px; }
+    .game-page .streamers .bios .streamer-bio {
+      float: left; }
