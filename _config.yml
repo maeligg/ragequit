@@ -10,7 +10,7 @@ title: Ragequit.fr
 email: maelbrunet@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/ragequit" # the subpath of your site, e.g. /blog
 url: "http://ragequit.fr" # the base hostname & protocol for your site
 twitter_username: maelb
 github_username:  maeligg
