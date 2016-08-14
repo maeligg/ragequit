@@ -433,7 +433,7 @@ footer {
   float: left; }
 
 .game-page .latest-video {
-  padding: 73px 20px; }
+  padding: 73px 20px 0; }
   @media screen and (min-width: 880px) {
     .game-page .latest-video {
       float: right; } }
