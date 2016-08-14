@@ -18,6 +18,9 @@ github_username:  maeligg
 # Build settings
 markdown: kramdown
 
+# Include
+include: ["_pages"]
+
 # Exclude
 exclude: ["sass",
           "gulpfile.js",
