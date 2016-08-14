@@ -340,7 +340,7 @@ footer {
 	}
 
 	.latest-video {
-		padding: 73px 20px; // Same as h2 height
+		padding: 73px 20px 0; // Same as h2 height
 		@media screen and (min-width: $breakpoint-md) {
 			float: right;
 		}

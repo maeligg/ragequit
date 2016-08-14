@@ -18,17 +18,24 @@ gulp.task('jekyll-build', function (done) {
         .on('close', done);
 });
 
+// Local environment
+gulp.task('jekyll-build-local', function (done) {
+    browserSync.notify(messages.jekyllBuild);
+    return cp.spawn( jekyll , ['build', '--config','_config_dev.yml'], {stdio: 'inherit'})
+        .on('close', done);
+});
+
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['jekyll-build-local'], function () {
     browserSync.reload();
 });
 
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'svgSprite', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'svgSprite', 'jekyll-build-local'], function() {
     browserSync({
         server: {
             baseDir: '_site'
@@ -81,3 +88,4 @@ gulp.task('watch', function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('release', ['sass', 'svgSprite', 'jekyll-build']);
